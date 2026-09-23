@@ -1,0 +1,457 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #efeae2;
+  color: #17202a;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  height: 64px;
+  background: #075e54;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+}
+
+.brand {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#status {
+  font-size: 12px;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.users {
+  width: 320px;
+  background: white;
+  border-left: 1px solid #ddd;
+  padding: 14px;
+}
+
+.users h2 {
+  margin: 4px 0 14px;
+}
+
+.user {
+  width: 100%;
+  border: 0;
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  gap: 10px;
+  text-align: right;
+}
+
+.avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #128c7e;
+  color: white;
+  font-weight: bold;
+}
+
+.user small,
+.chat-head small {
+  display: block;
+  color: #777;
+  margin-top: 4px;
+}
+
+.chat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-head {
+  background: white;
+  padding: 10px 16px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.messages {
+  flex: 1;
+  overflow: auto;
+  padding: 20px;
+}
+
+.msg {
+  max-width: 70%;
+  background: white;
+  padding: 9px 12px;
+  border-radius: 10px;
+  margin: 7px 0;
+  box-shadow: 0 1px 1px #ccc;
+}
+
+.mine {
+  margin-right: auto;
+  background: #d9fdd3;
+}
+
+.msg small {
+  display: block;
+  color: #777;
+  font-size: 10px;
+  margin-top: 4px;
+}
+
+form {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  background: white;
+}
+
+input {
+  flex: 1;
+  border: 1px solid #ccc;
+  border-radius: 22px;
+  padding: 12px 16px;
+  font-size: 16px;
+}
+
+form button {
+  border: 0;
+  border-radius: 50%;
+  width: 46px;
+  background: #128c7e;
+  color: white;
+  font-size: 20px;
+}
+
+@media (max-width: 700px) {
+  .users {
+    display: none;
+  }
+
+  .messages {
+    padding: 12px;
+  }
+
+  .msg {
+    max-width: 85%;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.media-panel {
+  background: #111;
+  padding: 10px;
+}
+
+.call-videos {
+  display: none;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.call-videos.visible {
+  display: flex;
+}
+
+.video-box {
+  flex: 1 1 220px;
+  min-width: 0;
+}
+
+.video-box span {
+  display: block;
+  color: #fff;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.video-box video {
+  width: 100%;
+  max-height: 260px;
+  background: #000;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+#localPreview {
+  width: 220px;
+  max-width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.media-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.media-actions button,
+#attachButton {
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 12px;
+  cursor: pointer;
+}
+
+.message-image,
+.message-video {
+  display: block;
+  max-width: 280px;
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 6px;
+}
+
+.file-link {
+  display: block;
+  margin-top: 6px;
+  word-break: break-all;
+}
+
+audio {
+  max-width: 260px;
+  width: 100%;
+  margin-top: 6px;
+}
+
+
+/* ALHELAWY_GOLD_MEDIA_V1 */
+
+:root {
+  --gold: #d4af37;
+  --gold-light: #f7e7a8;
+  --gold-dark: #8f6b12;
+  --cream: #fffaf0;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, #fff8dc 0%, #f4ead0 45%, #e8d7a8 100%);
+  color: #3a2a08;
+}
+
+header {
+  background: linear-gradient(135deg, #8f6b12, #d4af37, #f7e7a8, #b8860b);
+  color: #241a05;
+  border-bottom: 3px double var(--gold-light);
+  box-shadow: 0 2px 12px rgba(143, 107, 18, .35);
+}
+
+.users,
+.chat-head,
+form {
+  background: rgba(255, 250, 240, .96);
+  border-color: var(--gold);
+}
+
+.users {
+  border-left: 3px double var(--gold);
+}
+
+.chat-head {
+  border-bottom: 3px double var(--gold);
+}
+
+.user {
+  background: #fff8df;
+  border: 1px solid var(--gold-light);
+}
+
+.avatar {
+  background: linear-gradient(135deg, #8f6b12, #d4af37);
+  color: #fff;
+  border: 2px solid var(--gold-light);
+}
+
+.messages {
+  background: transparent;
+}
+
+.msg {
+  border: 1px solid var(--gold-light);
+  box-shadow: 0 2px 8px rgba(143, 107, 18, .16);
+}
+
+.mine {
+  background: #fff1b8;
+  border-color: var(--gold);
+}
+
+.media-panel {
+  background: linear-gradient(135deg, #3a2a08, #6f5310);
+  border-top: 3px double var(--gold-light);
+  border-bottom: 3px double var(--gold-light);
+  padding: 12px;
+}
+
+.call-videos {
+  gap: 12px;
+}
+
+.video-box {
+  padding: 7px;
+  border: 2px solid var(--gold);
+  border-radius: 14px;
+  background: #171106;
+}
+
+.video-box video {
+  border: 2px solid var(--gold-light);
+}
+
+.media-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.media-actions button,
+#attachButton,
+form button[type="submit"] {
+  border: 2px solid var(--gold-light);
+  outline: 1px solid var(--gold);
+  background: linear-gradient(135deg, #d4af37, #f7e7a8, #b8860b);
+  color: #2d2105;
+  font-weight: 700;
+  box-shadow: 0 2px 7px rgba(0, 0, 0, .22);
+}
+
+.media-actions button:hover,
+#attachButton:hover,
+form button[type="submit"]:hover {
+  filter: brightness(1.08);
+}
+
+.media-actions button:disabled {
+  opacity: .55;
+}
+
+input {
+  border: 2px solid var(--gold);
+  outline: 1px solid var(--gold-light);
+  background: #fffdf5;
+}
+
+form {
+  border-top: 3px double var(--gold);
+  gap: 10px;
+}
+
+.message-image,
+.message-video,
+audio {
+  border: 2px solid var(--gold);
+  box-shadow: 0 2px 8px rgba(143, 107, 18, .2);
+}
+
+.file-link {
+  color: #73530a;
+  font-weight: 700;
+}
+
+
+/* ALHELAWY_ADVISOR_TOOLBAR_V1 */
+
+.brand {
+  font-size: 18px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.media-actions {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 5px;
+  width: 100%;
+  justify-content: stretch;
+  align-items: center;
+}
+
+.media-actions button {
+  flex: 1 1 0;
+  min-width: 0;
+  width: 0;
+  height: 40px;
+  padding: 5px 3px;
+  border-radius: 9px;
+  font-size: 10px;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#attachButton,
+form button[type="submit"] {
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+}
+
+@media (max-width: 420px) {
+  .media-panel {
+    padding: 8px 5px;
+  }
+
+  .media-actions {
+    gap: 4px;
+  }
+
+  .media-actions button {
+    height: 38px;
+    font-size: 9px;
+    padding: 4px 2px;
+  }
+}
+
+
+/* ALHELAWY_ADVISOR_NAME_GOLD_V1 */
+
+.brand {
+  font-size: 25px;
+  font-weight: 900;
+  color: #fff1a8;
+  text-shadow:
+    0 0 4px #8f6b12,
+    0 0 9px rgba(247, 231, 168, .9);
+  white-space: nowrap;
+  letter-spacing: .3px;
+}
+
+@media (max-width: 420px) {
+  .brand {
+    font-size: 20px;
+  }
+}

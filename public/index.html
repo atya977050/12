@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>المستشار أونلاين</title>
+<link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+<header>
+  <div class="brand">👑 المستشار عصام الهلباوى أونلاين</div>
+  <div id="status">غير متصل</div>
+</header>
+
+<main>
+
+<aside class="users">
+
+<h2>المحادثات</h2>
+
+<button class="user active">
+  <span class="avatar">ع</span>
+
+  <span>
+    <b>عطيه</b>
+    <small id="presence">غير متصل</small>
+  </span>
+</button>
+
+</aside>
+
+<section class="chat">
+
+<div class="chat-head">
+
+<span class="avatar">ع</span>
+
+<div>
+  <b>عطيه</b>
+  <small id="chatPresence">غير متصل</small>
+</div>
+
+</div>
+
+<div id="messages" class="messages"></div>
+
+<div id="mediaPanel" class="media-panel">
+
+  <div id="callVideos" class="call-videos">
+    <div class="video-box">
+      <span>أنا</span>
+      <video id="localPreview" autoplay muted playsinline></video>
+    </div>
+
+    <div class="video-box">
+      <span>الطرف الآخر</span>
+      <video id="remoteVideo" autoplay playsinline></video>
+    </div>
+  </div>
+
+  <div class="media-actions">
+    <button type="button" id="callButton">📞 بدء المكالمة</button>
+    <button type="button" id="endCallButton" disabled>⛔ إنهاء</button>
+    <button type="button" id="startCamera">📷 الكاميرا</button>
+    <button type="button" id="recordAudio">🎙️ تسجيل صوت</button>
+    <button type="button" id="stopRecording" disabled>⏹️ إيقاف</button>
+  </div>
+
+</div>
+
+<form id="composer">
+
+  <input
+    id="fileInput"
+    type="file"
+    hidden
+  />
+
+  <button
+    type="button"
+    id="attachButton"
+    title="إرفاق ملف"
+  >📎</button>
+
+  <input
+    id="text"
+    autocomplete="off"
+    placeholder="اكتب رسالة..."
+  />
+
+  <button type="submit">➤</button>
+
+</form>
+
+</section>
+
+</main>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/app.js"></script>
+
+</body>
+</html>
