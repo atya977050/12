@@ -1,109 +1,114 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>المستشار أونلاين</title>
-<link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المستشار عصام الهلباوي اون لاين</title>
+  <link rel="stylesheet" href="/welcome.css">
 </head>
 
 <body>
 
-<div class="app">
+  <main class="welcome">
 
-<header>
-  <div class="brand">👑 المستشار عصام الهلباوى أونلاين</div>
-  <div id="status">غير متصل</div>
-</header>
+    <section class="hero">
+      <div class="hero-content">
 
-<main>
+        <div class="law-mark">⚖️</div>
 
-<aside class="users">
+        <h1>المستشار عصام الهلباوي اون لاين</h1>
 
-<h2>المحادثات</h2>
+        <p class="subtitle">
+          مكتب المحاماة والاستشارات القانونية أون لاين
+        </p>
 
-<button class="user active">
-  <span class="avatar">ع</span>
+        <div class="login-box">
 
-  <span>
-    <b>عطيه</b>
-    <small id="presence">غير متصل</small>
-  </span>
-</button>
+          <h2>مرحبًا بك</h2>
 
-</aside>
+          <p>
+            سجّل دخولك للوصول إلى خدمات المكتب والمحادثة المباشرة.
+          </p>
 
-<section class="chat">
+          <input
+            id="userName"
+            type="text"
+            placeholder="اكتب اسمك"
+            autocomplete="name"
+          >
 
-<div class="chat-head">
+          <button id="enterButton">
+            ⚖️ تسجيل الدخول
+          </button>
 
-<span class="avatar">ع</span>
+        </div>
 
-<div>
-  <b>عطيه</b>
-  <small id="chatPresence">غير متصل</small>
-</div>
+      </div>
+    </section>
 
-</div>
+    <section class="services">
 
-<div id="messages" class="messages"></div>
+      <h2>خدمات المكتب</h2>
 
-<div id="mediaPanel" class="media-panel">
+      <div class="service-grid">
 
-  <div id="callVideos" class="call-videos">
-    <div class="video-box">
-      <span>أنا</span>
-      <video id="localPreview" autoplay muted playsinline></video>
-    </div>
+        <div class="service">
+          <span>💬</span>
+          <h3>المحادثة المباشرة</h3>
+          <p>تواصل مباشر مع المكتب أون لاين.</p>
+        </div>
 
-    <div class="video-box">
-      <span>الطرف الآخر</span>
-      <video id="remoteVideo" autoplay playsinline></video>
-    </div>
-  </div>
+        <div class="service">
+          <span>📹</span>
+          <h3>الاستشارة المرئية</h3>
+          <p>محادثات صوتية ومرئية عن بُعد.</p>
+        </div>
 
-  <div class="media-actions">
-    <button type="button" id="callButton">📞 بدء المكالمة</button>
-    <button type="button" id="endCallButton" disabled>⛔ إنهاء</button>
-    <button type="button" id="startCamera">📷 الكاميرا</button>
-    <button type="button" id="recordAudio">🎙️ تسجيل صوت</button>
-    <button type="button" id="stopRecording" disabled>⏹️ إيقاف</button>
-  </div>
+        <div class="service">
+          <span>📎</span>
+          <h3>المستندات</h3>
+          <p>إرسال المستندات والملفات أثناء المحادثة.</p>
+        </div>
 
-</div>
+        <div class="service">
+          <span>🧠</span>
+          <h3>التقرير الذكي</h3>
+          <p>إعداد وتنظيم المعلومات القانونية للمراجعة.</p>
+        </div>
 
-<form id="composer">
+      </div>
 
-  <input
-    id="fileInput"
-    type="file"
-    hidden
-  />
+    </section>
 
-  <button
-    type="button"
-    id="attachButton"
-    title="إرفاق ملف"
-  >📎</button>
+    <footer>
+      © المستشار عصام الهلباوي اون لاين
+    </footer>
 
-  <input
-    id="text"
-    autocomplete="off"
-    placeholder="اكتب رسالة..."
-  />
+  </main>
 
-  <button type="submit">➤</button>
+  <script>
+    const button = document.getElementById("enterButton");
+    const input = document.getElementById("userName");
 
-</form>
+    button.addEventListener("click", () => {
+      const name = input.value.trim();
 
-</section>
+      if (!name) {
+        input.focus();
+        input.style.borderColor = "#d4af37";
+        return;
+      }
 
-</main>
+      localStorage.setItem("advisor_user_name", name);
+      window.location.href = "/chat.html";
+    });
 
-</div>
-
-<script src="/socket.io/socket.io.js"></script>
-<script src="/app.js"></script>
+    input.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        button.click();
+      }
+    });
+  </script>
 
 </body>
 </html>
